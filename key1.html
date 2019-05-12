@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+</head>
+<body>
+<div id="copy" data-clipboard-text="我去1">
+    <<p>1</p>
+    </div>
+
+<script src="https://cdnjs.cat.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./clipboard.min.js"></script>
+<script>
+     $("body").onmousemove = copycode();
+     
+
+    function copycode()
+    {
+        
+        // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+        {
+            var clipboard = new Clipboard('#copy');
+
+            clipboard.on('success', function (e)
+            {
+                // alert("复制成功");
+                console.log('success');
+            });
+            clipboard.on('error', function (e)
+            {
+                // alert("复制失败");
+                console.log("fail");
+            });
+        }
+    
+    }
+    
+
+</script>
+</body>
+</html>
